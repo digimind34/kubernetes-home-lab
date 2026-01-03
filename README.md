@@ -1,10 +1,13 @@
 # Kubernetes Home Lab 🚀
 
+md
 An end-to-end Kubernetes home lab showcasing **real-world DevOps and Cloud Engineering skills** — from cluster bootstrap to production-style application deployments, networking, security, and troubleshooting.
 
 This project reflects hands-on experience with **how Kubernetes behaves in practice**, not just theory.
 
 ---
+📂 **Detailed lab documentation:**  
+➡️ [View Labs Index](labs/README.md)
 
 ## 🧱 Architecture Overview
 
@@ -56,6 +59,8 @@ This project reflects hands-on experience with **how Kubernetes behaves in pract
 | LAB 15 | Python Service Exposure |
 | LAB 16 | Flask Production Setup |
 | LAB 17 | Spring Boot on Kubernetes |
+🔗 Full lab breakdown and documentation:  
+➡️ [Go to labs/README.md](labs/README.md)
 
 📂 Each lab includes:
 - YAML manifests
