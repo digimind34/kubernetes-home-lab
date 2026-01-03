@@ -1,10 +1,30 @@
 # Kubernetes Home Lab 🚀
 
-An end-to-end Kubernetes home lab showcasing real-world DevOps skills:
-cluster setup, core objects, networking, services, security, troubleshooting,
-and application deployments.
+An end-to-end Kubernetes home lab showcasing **real-world DevOps and Cloud Engineering skills** — from cluster bootstrap to production-style application deployments, networking, security, and troubleshooting.
 
-## 🔧 Environment
+This project reflects hands-on experience with **how Kubernetes behaves in practice**, not just theory.
+
+---
+
+## 🧱 Architecture Overview
+
+**Cluster Topology**
+- 1 × Control Plane (kubeadm)
+- 3 × Worker Nodes
+- Ubuntu Linux (VM-based home lab)
+
+**Core Components**
+- Container Runtime: Docker
+- CNI: Calico
+- Service Exposure: ClusterIP, NodePort, MetalLB (LoadBalancer)
+- Workloads: Python (Flask), Java (Spring Boot)
+
+> The lab intentionally mirrors on-prem and cloud-native Kubernetes patterns used in production environments.
+
+---
+
+## 🛠️ Environment
+
 - Kubernetes (kubeadm)
 - Ubuntu Linux
 - Docker
@@ -13,7 +33,10 @@ and application deployments.
 - Python (Flask)
 - Java (Spring Boot)
 
+---
+
 ## 🧪 Labs Overview
+
 | Lab | Topic |
 |----|------|
 | LAB 01 | Cluster Setup (kubeadm + Calico) |
@@ -34,12 +57,65 @@ and application deployments.
 | LAB 16 | Flask Production Setup |
 | LAB 17 | Spring Boot on Kubernetes |
 
-## 🎯 Objective
-This project demonstrates production-ready Kubernetes skills aligned with
-DevOps and Cloud Engineer roles.
-
-## 📌 Status
-✅ All labs completed  
-📦 Documentation and YAML manifests included  
+📂 Each lab includes:
+- YAML manifests
+- Commands executed
+- Observed behavior
+- Troubleshooting notes
 
 ---
+
+## 🎯 Objective
+
+Demonstrate **production-ready Kubernetes skills** aligned with:
+- DevOps Engineer
+- Platform Engineer
+- Cloud Engineer roles
+
+Focus areas:
+- Cluster operations
+- Networking & traffic flow
+- Security & access control
+- Application lifecycle management
+- Debugging real failures
+
+---
+
+## 🧠 Key Challenges Solved
+
+- Kubernetes networking misconfiguration (CNI, services, DNS)
+- CrashLoopBackOff and pod-level debugging
+- RBAC permission design and enforcement
+- Safe exposure of services using MetalLB
+- Horizontal Pod Autoscaling behavior under load
+- YAML structure and maintainability at scale
+
+---
+
+## 📌 Status
+
+- ✅ All labs completed
+- ✅ YAML manifests included
+- ✅ Troubleshooting documented
+- 🔄 Cloud mapping (EKS) in progress
+
+---
+
+## ☁️ Cloud Readiness (Next Phase)
+
+This lab is designed to map cleanly to managed Kubernetes platforms:
+- AWS EKS
+- Azure AKS
+- Google GKE
+
+Upcoming work:
+- EKS cluster migration
+- Helm chart packaging
+- GitHub Actions CI/CD
+- Observability (Prometheus + Grafana)
+
+---
+
+## 📎 Notes
+
+This repository is part of a broader DevOps learning and portfolio journey, emphasizing **practical system understanding**, not just passing certifications.
