@@ -11,7 +11,7 @@ This folder contains LAB 02–LAB 17 documentation, YAML manifests, commands, an
 | LAB 05 | Deployments | [Open](lab-05-deployments/README.md) |
 | LAB 04 | Replicasets | [Open](lab-04-replicasets/README.md) |
 | LAB 07 | Networking Dns | [Open](lab-07-networking-dns/README.md) |
-| LAB 06 | Services Clusterip Nodeport | [Open](lab-06-services-clusterip-nodeport/README.md) |
+| LAB 06 | Services Clusterip Nodeport | [Open](lab-06-services/README.md) |
 | LAB 03 | Pods | [Open](lab-03-pods/README.md) |
 | LAB 02 | Namespaces | [Open](lab-02-namespaces/README.md) |
 | LAB 12 | Rbac Serviceaccounts | [Open](lab-12-rbac-serviceaccounts/README.md) |
