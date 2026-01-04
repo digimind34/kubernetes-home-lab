@@ -123,9 +123,12 @@ What NodePort means
 
 Exposes service on every node’s IP
 
-Uses a port in range 30000–32767
+Uses a port in the range 30000–32767
 
 Common for labs and testing
+<p align="center">
+  <img src="images/Nodeport services.png" width="650" alt="NodePort Service Traffic Flow">
+</p>
 
 Create NodePort Service
 
