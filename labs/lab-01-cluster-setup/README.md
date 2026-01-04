@@ -48,7 +48,7 @@ Bootstrap Tool: kubeadm
 ## 🔁 Cluster Bootstrap Flow (kubeadm)
 
 <p align="center">
-  <img src="diagrams/lab01-bootstrap-flow.png" width="800">
+  <img src="diagrams/lab01-bootstrap-flow.png" width="500">
 </p>
 
 **Bootstrap Steps**
@@ -142,7 +142,7 @@ NotReady is expected until CNI is installed.
 ## 🌐 Pod Networking (Calico CNI)
 
 <p align="center">
-  <img src="diagrams/lab01-calico-networking.png" width="800">
+  <img src="diagrams/lab01-calico-networking.png" width="500">
 </p>
 
 **Networking Highlights**
@@ -173,7 +173,7 @@ kubectl get pods -n kube-system | grep coredns
 ## ✅ Cluster Validation & Health Checks
 
 <p align="center">
-  <img src="diagrams/lab01-validation-checks.png" width="800">
+  <img src="diagrams/lab01-validation-checks.png" width="500">
 </p>
 
 **Validation Checklist**
