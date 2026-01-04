@@ -170,6 +170,10 @@ Standard in cloud environments (AWS ELB, Azure LB, GCP LB)
 
 In labs, usually simulated (e.g., MetalLB)
 
+<p align="center">
+  <img src="images/3.png" width="650" alt="LoadBalancer Service Flow">
+</p>
+
 Create LoadBalancer Service
 
 manifests/nginx-loadbalancer.yaml
@@ -198,6 +202,9 @@ Expected:
 EXTERNAL-IP pending (or assigned if MetalLB/cloud exists)
 
 Step 5 — Understand traffic flow (conceptual)
+<p align="center">
+  <img src="images/2.png" width="650" alt="ClusterIP Service Traffic Flow">
+</p>
 
 Traffic path:
 
