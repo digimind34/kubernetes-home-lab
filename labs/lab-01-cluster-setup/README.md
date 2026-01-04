@@ -28,7 +28,7 @@ DNS resolution works inside the cluster
 🧱 Cluster Architecture
 ### 📐 Cluster Architecture
 
-![LAB 01 Kubernetes Architecture](./diagrams/lab01-architecture.svg)
+![LAB 01 Kubernetes Architecture](./diagrams/lab01-architecture.png)
 
 Role	Hostname	Example IP
 Control Plane	k8s-master	192.168.56.10
