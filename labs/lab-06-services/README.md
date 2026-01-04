@@ -12,6 +12,8 @@ NodePort (external access via node IPs)
 LoadBalancer (cloud-style access, simulated in lab)
 
 Why Services Are Needed (Visual Intuition)
+<img width="1402" height="882" alt="image" src="https://github.com/user-attachments/assets/7597e5c6-5c86-49db-b6cf-9c2127a3e52f" />
+
 
 Key idea:
 Clients never talk to Pods directly — they talk to Services, and Kubernetes handles routing.
