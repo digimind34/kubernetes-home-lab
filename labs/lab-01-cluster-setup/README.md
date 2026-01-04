@@ -5,30 +5,25 @@ This lab demonstrates how to build a production-grade Kubernetes cluster using k
 
 It forms the foundation lab for all subsequent Kubernetes workloads, networking, security, and application deployments in this repository.
 
-🎯 Lab Objectives
+## 📌 Objective
+Build a production-style Kubernetes home lab using `kubeadm`, validate cluster health, and verify networking using Calico CNI.
 
-Build a Kubernetes cluster using kubeadm
+This lab establishes the **foundation for all subsequent Kubernetes labs** in this repository.
 
-Configure:
+---
 
-1 Control Plane (Master)
+## 🏗️ Cluster Architecture
 
-3 Worker Nodes
+<p align="center">
+  <img src="diagrams/lab01-architecture.png" width="800">
+</p>
 
-Install and validate Calico CNI
-
-Ensure:
-
-All nodes are Ready
-
-All core system pods are Running
-
-DNS resolution works inside the cluster
-
-🧱 Cluster Architecture
-### 📐 Cluster Architecture
-
-![LAB 01 Kubernetes Architecture](./diagrams/lab01-architecture.png)
+**Architecture Overview**
+- 1 × Control Plane (Master)
+- 3 × Worker Nodes
+- Container Runtime: containerd
+- Networking: Calico CNI
+- Environment: Ubuntu (WSL / VirtualBox-based Home Lab)
 
 Role	Hostname	Example IP
 Control Plane	k8s-master	192.168.56.10
@@ -50,12 +45,18 @@ Networking: Calico CNI
 
 Bootstrap Tool: kubeadm
 
-### 🔁 Cluster Bootstrap Flow (kubeadm)
+## 🔁 Cluster Bootstrap Flow (kubeadm)
 
-![LAB 01 Bootstrap Flow](./diagrams/lab01-bootstrap-flow.png)
-### 🌐 Pod Networking with Calico CNI
+<p align="center">
+  <img src="diagrams/lab01-bootstrap-flow.png" width="800">
+</p>
 
-![LAB 01 Calico Networking](./diagrams/lab01-calico-networking.png)
+**Bootstrap Steps**
+1. Initialize control plane using `kubeadm init`
+2. Configure kubeconfig for cluster access
+3. Deploy Calico CNI
+4. Join worker nodes using `kubeadm join`
+5. Verify node readiness
 
 
 🧩 Implementation Steps
@@ -138,6 +139,18 @@ kubectl get pods -A
 
 NotReady is expected until CNI is installed.
 
+## 🌐 Pod Networking (Calico CNI)
+
+<p align="center">
+  <img src="diagrams/lab01-calico-networking.png" width="800">
+</p>
+
+**Networking Highlights**
+- Each Pod receives a unique IP
+- Calico enables pod-to-pod communication across nodes
+- Network policies enforced at Layer 3/4
+- Scalable and production-grade CNI solution
+
 E️⃣ Install Calico CNI (MASTER Only)
 kubectl apply -f https://raw.githubusercontent.com/projectcalico/calico/v3.28.0/manifests/calico.yaml
 
@@ -157,9 +170,20 @@ kubectl get nodes -o wide
 kubectl get pods -A
 kubectl get pods -n kube-system | grep coredns
 
-### 🧪 Cluster Validation & Health Checks
+## ✅ Cluster Validation & Health Checks
 
-![LAB 01 Validation Checks](./diagrams/lab01-validation-checks.png)
+<p align="center">
+  <img src="diagrams/lab01-validation-checks.png" width="800">
+</p>
+
+**Validation Checklist**
+- [x] Control plane initialized successfully
+- [x] All worker nodes joined
+- [x] Nodes in `Ready` state
+- [x] Core system pods running
+- [x] DNS resolution functional
+- [x] Pod networking verified
+
 
 
 DNS Verification
@@ -192,6 +216,15 @@ Full Cluster Reset (ALL Nodes)
 sudo kubeadm reset -f
 sudo rm -rf ~/.kube
 sudo systemctl restart containerd kubelet
+
+## 🧪 Commands Used
+
+```bash
+kubeadm init
+kubectl get nodes
+kubectl get pods -A
+kubectl describe node
+kubectl cluster-info
 
 📘 Lab Status
 
