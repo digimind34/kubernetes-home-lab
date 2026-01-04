@@ -13,12 +13,9 @@ LoadBalancer (cloud-style access, simulated in lab)
 
 Why Services Are Needed (Visual Intuition)
 <p align="center">
-  <img src="images/services-intuition.png" width="750" alt="Why Kubernetes Services Are Needed">
+  <img src="images/Why services are needed.png" width="700" alt="Why Kubernetes Services Are Needed">
 </p>
 
-<p align="center">
-  <img src="images/Why Kubernetes Services Are Needed.png" width="700" alt="Why Kubernetes Services Are Needed">
-</p>
 
 Key idea:
 Clients never talk to Pods directly — they talk to Services, and Kubernetes handles routing.
