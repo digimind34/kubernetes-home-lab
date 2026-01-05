@@ -1,69 +1,37 @@
-# LAB 11 — Network Policies
 
-## Overview
-Briefly describe what this lab teaches and why it matters in real environments.
+---
 
-## Objectives
-- [ ] Objective 1
-- [ ] Objective 2
-- [ ] Objective 3
+# 📁 LAB-11 — Network Policies (Zero Trust)
 
-## Prerequisites
-- Kubernetes cluster ready (kubeadm + CNI)
-- kubectl configured (`kubectl get nodes`)
-- (Optional) Docker registry access if pushing images
+```md
+# LAB-11 — Network Policies (Zero Trust)
 
-## Lab Files
-- `manifests/` — YAML manifests used in this lab
-- `notes/` — extra notes, outputs, and command logs
-- `screenshots/` — optional proof screenshots
+## 🎯 Objective
+Control pod-level traffic using Kubernetes Network Policies.
 
-## Steps
-> Add commands exactly as you ran them, with short explanations.
+## 🧠 Concepts Covered
+- Default deny
+- Namespace isolation
+- Label-based access control
 
-### Step 1 — (Title)
+## 🏗 Network Policy Model
+![Network Policy](./diagrams/network-policy.png)
+
+## 🧪 Steps Performed
+1. Deploy multiple pods
+2. Apply deny-all policy
+3. Explicitly allow required traffic
+4. Validate blocked and allowed flows
+
+## 🔍 Validation
 ```bash
-# command here
-```
-Expected result:
-- …
+kubectl exec pod-a -- curl pod-b
+✅ Outcome
 
-### Step 2 — (Title)
-```bash
-# command here
-```
-Expected result:
-- …
+Implemented Zero Trust networking
 
-## Verification
-```bash
-kubectl get all -A
-```
+Gained deep understanding of pod-level security
 
-Checklist:
-- [ ] Resources created successfully
-- [ ] Pods are Running/Ready
-- [ ] Service reachable (if applicable)
+🧩 Real-World Use Case
 
-## Troubleshooting Notes
-Common issues you hit and how you solved them:
-- **Symptom:** …
-  - **Cause:** …
-  - **Fix:** …
-
-Useful commands:
-```bash
-kubectl get events -A --sort-by=.metadata.creationTimestamp
-kubectl describe pod <pod>
-kubectl logs <pod> --previous
-```
-
-## Cleanup (Optional)
-```bash
-# delete resources here
-```
-
-## Key Takeaways
-- Bullet point learning 1
-- Bullet point learning 2
-- Bullet point learning 3
+Used in regulated environments and secure multi-tenant clusters.
