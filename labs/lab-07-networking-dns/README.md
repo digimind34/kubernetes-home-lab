@@ -1,69 +1,31 @@
-# LAB 07 — Networking Dns
+# LAB-07 — Kubernetes Networking & DNS
 
-## Overview
-Briefly describe what this lab teaches and why it matters in real environments.
+## 🎯 Objective
+Understand how networking works inside a Kubernetes cluster, including pod-to-pod communication, services, DNS resolution, and CNI behavior.
 
-## Objectives
-- [ ] Objective 1
-- [ ] Objective 2
-- [ ] Objective 3
+## 🧠 Concepts Covered
+- Pod-to-Pod Networking
+- ClusterIP Services
+- kube-proxy
+- CoreDNS
+- CNI (Calico)
+- Service discovery
 
-## Prerequisites
-- Kubernetes cluster ready (kubeadm + CNI)
-- kubectl configured (`kubectl get nodes`)
-- (Optional) Docker registry access if pushing images
+## 🏗 Architecture Overview
+![Kubernetes Networking & DNS](./diagrams/networking-dns-flow.png)
 
-## Lab Files
-- `manifests/` — YAML manifests used in this lab
-- `notes/` — extra notes, outputs, and command logs
-- `screenshots/` — optional proof screenshots
+## 📂 Files
+- pod-a.yaml
+- pod-b.yaml
+- service.yaml
 
-## Steps
-> Add commands exactly as you ran them, with short explanations.
+## 🧪 Steps Performed
+1. Deploy multiple pods in the same namespace
+2. Expose pods using a ClusterIP service
+3. Test pod-to-pod communication
+4. Validate DNS-based service discovery
 
-### Step 1 — (Title)
+## 🔍 Validation Commands
 ```bash
-# command here
-```
-Expected result:
-- …
-
-### Step 2 — (Title)
-```bash
-# command here
-```
-Expected result:
-- …
-
-## Verification
-```bash
-kubectl get all -A
-```
-
-Checklist:
-- [ ] Resources created successfully
-- [ ] Pods are Running/Ready
-- [ ] Service reachable (if applicable)
-
-## Troubleshooting Notes
-Common issues you hit and how you solved them:
-- **Symptom:** …
-  - **Cause:** …
-  - **Fix:** …
-
-Useful commands:
-```bash
-kubectl get events -A --sort-by=.metadata.creationTimestamp
-kubectl describe pod <pod>
-kubectl logs <pod> --previous
-```
-
-## Cleanup (Optional)
-```bash
-# delete resources here
-```
-
-## Key Takeaways
-- Bullet point learning 1
-- Bullet point learning 2
-- Bullet point learning 3
+kubectl exec pod-a -- curl http://service-name
+kubectl exec pod-a -- nslookup service-name
