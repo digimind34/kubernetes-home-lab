@@ -1,69 +1,34 @@
-# LAB 14 — Python App Deployment
+# LAB-14 — Python App Deployment
 
-## Overview
-Briefly describe what this lab teaches and why it matters in real environments.
+## 🎯 Objective
+Deploy a containerized Python application to Kubernetes.
 
-## Objectives
-- [ ] Objective 1
-- [ ] Objective 2
-- [ ] Objective 3
+## 🧠 Stack
+- Python
+- Docker
+- Kubernetes Deployment & Service
 
-## Prerequisites
-- Kubernetes cluster ready (kubeadm + CNI)
-- kubectl configured (`kubectl get nodes`)
-- (Optional) Docker registry access if pushing images
+## 🏗 Architecture
+![Python App on Kubernetes](./diagrams/python-app.png)
 
-## Lab Files
-- `manifests/` — YAML manifests used in this lab
-- `notes/` — extra notes, outputs, and command logs
-- `screenshots/` — optional proof screenshots
+## 🧪 Steps Performed
+1. Build Docker image
+2. Push to registry
+3. Deploy to Kubernetes
+4. Validate application access
 
-## Steps
-> Add commands exactly as you ran them, with short explanations.
-
-### Step 1 — (Title)
+## 🔍 Validation
 ```bash
-# command here
-```
-Expected result:
-- …
+kubectl get pods
+kubectl logs <pod>
 
-### Step 2 — (Title)
-```bash
-# command here
-```
-Expected result:
-- …
 
-## Verification
-```bash
-kubectl get all -A
-```
+✅ Outcome
 
-Checklist:
-- [ ] Resources created successfully
-- [ ] Pods are Running/Ready
-- [ ] Service reachable (if applicable)
+Successfully ran Python workload on Kubernetes
 
-## Troubleshooting Notes
-Common issues you hit and how you solved them:
-- **Symptom:** …
-  - **Cause:** …
-  - **Fix:** …
+Understood container lifecycle
 
-Useful commands:
-```bash
-kubectl get events -A --sort-by=.metadata.creationTimestamp
-kubectl describe pod <pod>
-kubectl logs <pod> --previous
-```
+🧩 Real-World Use Case
 
-## Cleanup (Optional)
-```bash
-# delete resources here
-```
-
-## Key Takeaways
-- Bullet point learning 1
-- Bullet point learning 2
-- Bullet point learning 3
+Foundation for backend microservices.
