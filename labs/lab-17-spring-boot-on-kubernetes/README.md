@@ -1,69 +1,25 @@
-# LAB 17 — Spring Boot On Kubernetes
+# LAB-17 — Spring Boot on Kubernetes
 
-## Overview
-Briefly describe what this lab teaches and why it matters in real environments.
+## 🎯 Objective
+Deploy a Java Spring Boot application to Kubernetes.
 
-## Objectives
-- [ ] Objective 1
-- [ ] Objective 2
-- [ ] Objective 3
+## 🧠 Stack
+- Java 17
+- Spring Boot
+- Docker
+- Kubernetes
+- LoadBalancer (MetalLB)
 
-## Prerequisites
-- Kubernetes cluster ready (kubeadm + CNI)
-- kubectl configured (`kubectl get nodes`)
-- (Optional) Docker registry access if pushing images
+## 🏗 Architecture
+![Spring Boot on Kubernetes](./diagrams/springboot-k8s.png)
 
-## Lab Files
-- `manifests/` — YAML manifests used in this lab
-- `notes/` — extra notes, outputs, and command logs
-- `screenshots/` — optional proof screenshots
+## 🧪 Steps Performed
+1. Build JAR using Maven
+2. Create Docker image
+3. Deploy using Kubernetes manifests
+4. Expose via LoadBalancer
 
-## Steps
-> Add commands exactly as you ran them, with short explanations.
-
-### Step 1 — (Title)
+## 🔍 Validation
 ```bash
-# command here
-```
-Expected result:
-- …
-
-### Step 2 — (Title)
-```bash
-# command here
-```
-Expected result:
-- …
-
-## Verification
-```bash
-kubectl get all -A
-```
-
-Checklist:
-- [ ] Resources created successfully
-- [ ] Pods are Running/Ready
-- [ ] Service reachable (if applicable)
-
-## Troubleshooting Notes
-Common issues you hit and how you solved them:
-- **Symptom:** …
-  - **Cause:** …
-  - **Fix:** …
-
-Useful commands:
-```bash
-kubectl get events -A --sort-by=.metadata.creationTimestamp
-kubectl describe pod <pod>
-kubectl logs <pod> --previous
-```
-
-## Cleanup (Optional)
-```bash
-# delete resources here
-```
-
-## Key Takeaways
-- Bullet point learning 1
-- Bullet point learning 2
-- Bullet point learning 3
+kubectl get svc
+curl http://<EXTERNAL-IP>
