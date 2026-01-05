@@ -31,10 +31,10 @@ kubectl exec <pod> -- env
 
 ✅ Outcome
 
-Pods scaled automatically under load
+Clean separation of config from code
 
-Learned how Kubernetes handles elasticity
+Improved security and portability
 
 🧩 Real-World Use Case
 
-Used in production systems to handle traffic spikes efficiently.
+Mandatory for secure, environment-agnostic deployments.
