@@ -1,69 +1,31 @@
-# LAB 16 — Flask Production Setup
 
-## Overview
-Briefly describe what this lab teaches and why it matters in real environments.
+---
 
-## Objectives
-- [ ] Objective 1
-- [ ] Objective 2
-- [ ] Objective 3
+# 📁 LAB-16 — Flask Production Setup
 
-## Prerequisites
-- Kubernetes cluster ready (kubeadm + CNI)
-- kubectl configured (`kubectl get nodes`)
-- (Optional) Docker registry access if pushing images
+```md
+# LAB-16 — Flask Production Setup
 
-## Lab Files
-- `manifests/` — YAML manifests used in this lab
-- `notes/` — extra notes, outputs, and command logs
-- `screenshots/` — optional proof screenshots
+## 🎯 Objective
+Deploy Flask application using production-grade practices.
 
-## Steps
-> Add commands exactly as you ran them, with short explanations.
+## 🧠 Concepts Covered
+- Gunicorn
+- Readiness & liveness probes
+- Resource limits
 
-### Step 1 — (Title)
-```bash
-# command here
-```
-Expected result:
-- …
+## 🏗 Production Architecture
+![Flask Production](./diagrams/flask-prod.png)
 
-### Step 2 — (Title)
-```bash
-# command here
-```
-Expected result:
-- …
+## 🧪 Steps Performed
+1. Configure Gunicorn
+2. Add health checks
+3. Apply resource constraints
+4. Validate stability
 
-## Verification
-```bash
-kubectl get all -A
-```
+## ✅ Outcome
+- Flask app hardened for production
+- Improved reliability
 
-Checklist:
-- [ ] Resources created successfully
-- [ ] Pods are Running/Ready
-- [ ] Service reachable (if applicable)
-
-## Troubleshooting Notes
-Common issues you hit and how you solved them:
-- **Symptom:** …
-  - **Cause:** …
-  - **Fix:** …
-
-Useful commands:
-```bash
-kubectl get events -A --sort-by=.metadata.creationTimestamp
-kubectl describe pod <pod>
-kubectl logs <pod> --previous
-```
-
-## Cleanup (Optional)
-```bash
-# delete resources here
-```
-
-## Key Takeaways
-- Bullet point learning 1
-- Bullet point learning 2
-- Bullet point learning 3
+## 🧩 Real-World Use Case
+Used in scalable Python backend services.
