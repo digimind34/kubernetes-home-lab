@@ -1,69 +1,38 @@
-# LAB 12 — Rbac Serviceaccounts
 
-## Overview
-Briefly describe what this lab teaches and why it matters in real environments.
+---
 
-## Objectives
-- [ ] Objective 1
-- [ ] Objective 2
-- [ ] Objective 3
+# 📁 LAB-12 — RBAC & ServiceAccounts
 
-## Prerequisites
-- Kubernetes cluster ready (kubeadm + CNI)
-- kubectl configured (`kubectl get nodes`)
-- (Optional) Docker registry access if pushing images
+```md
+# LAB-12 — RBAC & ServiceAccounts
 
-## Lab Files
-- `manifests/` — YAML manifests used in this lab
-- `notes/` — extra notes, outputs, and command logs
-- `screenshots/` — optional proof screenshots
+## 🎯 Objective
+Secure Kubernetes access using Role-Based Access Control.
 
-## Steps
-> Add commands exactly as you ran them, with short explanations.
+## 🧠 Concepts Covered
+- Roles & ClusterRoles
+- RoleBindings
+- ServiceAccounts
+- Least privilege principle
 
-### Step 1 — (Title)
+## 🏗 RBAC Architecture
+![RBAC Flow](./diagrams/rbac-flow.png)
+
+## 🧪 Steps Performed
+1. Create ServiceAccount
+2. Define role permissions
+3. Bind roles to accounts
+4. Validate access restrictions
+
+## 🔍 Validation
 ```bash
-# command here
-```
-Expected result:
-- …
+kubectl auth can-i get pods --as=system:serviceaccount:default:test-sa
+✅ Outcome
 
-### Step 2 — (Title)
-```bash
-# command here
-```
-Expected result:
-- …
+Controlled access to cluster resources
 
-## Verification
-```bash
-kubectl get all -A
-```
+Improved security posture
 
-Checklist:
-- [ ] Resources created successfully
-- [ ] Pods are Running/Ready
-- [ ] Service reachable (if applicable)
+🧩 Real-World Use Case
 
-## Troubleshooting Notes
-Common issues you hit and how you solved them:
-- **Symptom:** …
-  - **Cause:** …
-  - **Fix:** …
-
-Useful commands:
-```bash
-kubectl get events -A --sort-by=.metadata.creationTimestamp
-kubectl describe pod <pod>
-kubectl logs <pod> --previous
-```
-
-## Cleanup (Optional)
-```bash
-# delete resources here
-```
-
-## Key Takeaways
-- Bullet point learning 1
-- Bullet point learning 2
-- Bullet point learning 3
+Critical for multi-team clusters and CI/CD automation.
