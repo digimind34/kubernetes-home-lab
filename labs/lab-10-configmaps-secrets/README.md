@@ -1,69 +1,40 @@
-# LAB 10 — Configmaps Secrets
 
-## Overview
-Briefly describe what this lab teaches and why it matters in real environments.
+---
 
-## Objectives
-- [ ] Objective 1
-- [ ] Objective 2
-- [ ] Objective 3
+# 📁 LAB-10 — ConfigMaps & Secrets
 
-## Prerequisites
-- Kubernetes cluster ready (kubeadm + CNI)
-- kubectl configured (`kubectl get nodes`)
-- (Optional) Docker registry access if pushing images
+```md
+# LAB-10 — ConfigMaps & Secrets
 
-## Lab Files
-- `manifests/` — YAML manifests used in this lab
-- `notes/` — extra notes, outputs, and command logs
-- `screenshots/` — optional proof screenshots
+## 🎯 Objective
+Externalize configuration and sensitive data from container images.
 
-## Steps
-> Add commands exactly as you ran them, with short explanations.
+## 🧠 Concepts Covered
+- ConfigMaps
+- Secrets
+- Environment variables
+- Volume mounts
 
-### Step 1 — (Title)
+## 🏗 Configuration Injection
+![ConfigMaps & Secrets](./diagrams/configmaps-secrets.png)
+
+## 🧪 Steps Performed
+1. Create ConfigMap for app configuration
+2. Create Secret for sensitive data
+3. Inject data via env vars and volumes
+4. Validate application behavior
+
+## 🔍 Validation
 ```bash
-# command here
-```
-Expected result:
-- …
+kubectl describe pod <pod-name>
+kubectl exec <pod> -- env
 
-### Step 2 — (Title)
-```bash
-# command here
-```
-Expected result:
-- …
+✅ Outcome
 
-## Verification
-```bash
-kubectl get all -A
-```
+Pods scaled automatically under load
 
-Checklist:
-- [ ] Resources created successfully
-- [ ] Pods are Running/Ready
-- [ ] Service reachable (if applicable)
+Learned how Kubernetes handles elasticity
 
-## Troubleshooting Notes
-Common issues you hit and how you solved them:
-- **Symptom:** …
-  - **Cause:** …
-  - **Fix:** …
+🧩 Real-World Use Case
 
-Useful commands:
-```bash
-kubectl get events -A --sort-by=.metadata.creationTimestamp
-kubectl describe pod <pod>
-kubectl logs <pod> --previous
-```
-
-## Cleanup (Optional)
-```bash
-# delete resources here
-```
-
-## Key Takeaways
-- Bullet point learning 1
-- Bullet point learning 2
-- Bullet point learning 3
+Used in production systems to handle traffic spikes efficiently.
