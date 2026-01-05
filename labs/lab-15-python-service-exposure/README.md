@@ -1,69 +1,39 @@
-# LAB 15 — Python Service Exposure
 
-## Overview
-Briefly describe what this lab teaches and why it matters in real environments.
+---
 
-## Objectives
-- [ ] Objective 1
-- [ ] Objective 2
-- [ ] Objective 3
+# 📁 LAB-15 — Python Service Exposure
 
-## Prerequisites
-- Kubernetes cluster ready (kubeadm + CNI)
-- kubectl configured (`kubectl get nodes`)
-- (Optional) Docker registry access if pushing images
+```md
+# LAB-15 — Python Service Exposure
 
-## Lab Files
-- `manifests/` — YAML manifests used in this lab
-- `notes/` — extra notes, outputs, and command logs
-- `screenshots/` — optional proof screenshots
+## 🎯 Objective
+Expose Python applications using Kubernetes Services.
 
-## Steps
-> Add commands exactly as you ran them, with short explanations.
+## 🧠 Service Types Covered
+- ClusterIP
+- NodePort
+- LoadBalancer
 
-### Step 1 — (Title)
+## 🏗 Exposure Model
+![Service Exposure](./diagrams/services.png)
+
+## 🧪 Steps Performed
+1. Create NodePort service
+2. Test external access
+3. Switch service types
+4. Validate connectivity
+
+## 🔍 Validation
 ```bash
-# command here
-```
-Expected result:
-- …
+curl http://<NODE-IP>:<PORT>
 
-### Step 2 — (Title)
-```bash
-# command here
-```
-Expected result:
-- …
 
-## Verification
-```bash
-kubectl get all -A
-```
+✅ Outcome
 
-Checklist:
-- [ ] Resources created successfully
-- [ ] Pods are Running/Ready
-- [ ] Service reachable (if applicable)
+Learned service exposure strategies
 
-## Troubleshooting Notes
-Common issues you hit and how you solved them:
-- **Symptom:** …
-  - **Cause:** …
-  - **Fix:** …
+Compared internal vs external access models
 
-Useful commands:
-```bash
-kubectl get events -A --sort-by=.metadata.creationTimestamp
-kubectl describe pod <pod>
-kubectl logs <pod> --previous
-```
+🧩 Real-World Use Case
 
-## Cleanup (Optional)
-```bash
-# delete resources here
-```
-
-## Key Takeaways
-- Bullet point learning 1
-- Bullet point learning 2
-- Bullet point learning 3
+Required for production APIs and web apps.
