@@ -23,3 +23,14 @@ Deploy a Java Spring Boot application to Kubernetes.
 ```bash
 kubectl get svc
 curl http://<EXTERNAL-IP>
+
+
+✅ Outcome
+
+Java microservice running in Kubernetes
+
+End-to-end deployment completed
+
+🧩 Real-World Use Case
+
+Enterprise-grade backend services.
