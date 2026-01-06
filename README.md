@@ -59,6 +59,7 @@ This project reflects hands-on experience with **how Kubernetes behaves in pract
 | LAB 15 | Python Service Exposure |
 | LAB 16 | Flask Production Setup |
 | LAB 17 | Spring Boot on Kubernetes |
+| LAB 18 | Prometheus Monitoring & Troubleshooting on Kubernetes |
 🔗 Full lab breakdown and documentation:  
 ➡️ [Go to labs/README.md](labs/README.md)
 
