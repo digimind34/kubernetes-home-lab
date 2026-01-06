@@ -23,4 +23,6 @@ This folder contains LAB 01–LAB 17 documentation, YAML manifests, commands, an
 | LAB 15 | Python Service Exposure | [Open](lab-15-python-service-exposure/README.md) |
 | LAB 16 | Flask Production Setup | [Open](lab-16-flask-production-setup/README.md) |
 | LAB 17 | Spring Boot on Kubernetes | [Open](lab-17-spring-boot-on-kubernetes/README.md) |
+| LAB 18 | Prometheus Monitoring & Troubleshooting on Kubernetes | [Open](lab-18-prometheus-monitoring-&-troubleshooting-on-kubernetes/README.md) |
+
 
