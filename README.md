@@ -10,6 +10,56 @@ An end-to-end Kubernetes home lab showcasing real-world DevOps and Cloud Enginee
 
 This repository demonstrates practical Kubernetes engineering using kubeadm, containerd, Calico, MetalLB, RBAC, Network Policies, Horizontal Pod Autoscaling (HPA), and Prometheus. It reflects production-oriented practices rather than isolated tutorials.
 
+## 🏗️ Kubernetes Home Lab Architecture
+
+```mermaid
+flowchart TB
+
+    U[Developer]
+
+    CP[Control Plane]
+
+    W1[Worker Node 1]
+    W2[Worker Node 2]
+    W3[Worker Node 3]
+
+    CALICO[Calico CNI]
+    METALLB[MetalLB]
+    DNS[CoreDNS]
+
+    APP1[Python Flask App]
+    APP2[Spring Boot App]
+
+    PROM[Prometheus]
+    HPA[Horizontal Pod Autoscaler]
+    RBAC[RBAC]
+    NP[Network Policies]
+
+    U --> CP
+
+    CP --> W1
+    CP --> W2
+    CP --> W3
+
+    CALICO --> W1
+    CALICO --> W2
+    CALICO --> W3
+
+    METALLB --> APP1
+    METALLB --> APP2
+
+    DNS --> APP1
+    DNS --> APP2
+
+    W1 --> APP1
+    W2 --> APP2
+    W3 --> PROM
+
+    HPA --> APP1
+    RBAC --> APP1
+    NP --> APP1
+```
+    External[External Access<br/>Browser / curl] --> MetalLB
 ---
 📂 **Detailed lab documentation:**  
 ➡️ [View Labs Index](labs/README.md)
@@ -70,6 +120,7 @@ This architecture mirrors many concepts used in managed Kubernetes platforms suc
 - Monitoring with Prometheus
 - Linux Administration
 - Container Operations
+---
 
 ---
 ## 🧪 Labs Overview
