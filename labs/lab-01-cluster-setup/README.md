@@ -1,5 +1,21 @@
 🧪 LAB 01 — Kubernetes Cluster Setup & Validation
 📌 Overview
+| Level | Intermediate |
+|-------|--------------|
+| Time | 60–90 minutes |
+| Kubernetes Version | v1.33 |
+| OS | Ubuntu 24.04 LTS |
+
+## 💼 Skills Demonstrated
+
+- Kubernetes Cluster Installation
+- kubeadm Administration
+- containerd Runtime Configuration
+- Calico CNI Deployment
+- Multi-node Cluster Bootstrapping
+- Linux System Administration
+- Cluster Validation & Health Checks
+- Kubernetes Networking Fundamentals
 
 This lab demonstrates how to build a production-grade Kubernetes cluster using kubeadm, validate networking, confirm node health, and verify core system components.
 
@@ -44,6 +60,15 @@ Kubernetes Version: v1.30
 Networking: Calico CNI
 
 Bootstrap Tool: kubeadm
+
+## 📋 Prerequisites
+
+- Ubuntu Server 24.04 LTS
+- 4 Virtual Machines
+- Static IP addresses configured
+- SSH connectivity between nodes
+- Internet access
+- Sudo privileges
 
 ## 🔁 Cluster Bootstrap Flow (kubeadm)
 
@@ -170,6 +195,24 @@ kubectl get nodes -o wide
 kubectl get pods -A
 kubectl get pods -n kube-system | grep coredns
 
+## ✅ Expected Outcome
+
+After completing this lab you will have:
+
+- 1 Kubernetes Control Plane
+- 3 Worker Nodes
+- Calico networking operational
+- CoreDNS running
+- Nodes in Ready state
+- Cluster prepared for application deployments
+
+  ## 📚 Lessons Learned
+
+- Importance of disabling swap before kubeadm initialization.
+- Why containerd is preferred for modern Kubernetes clusters.
+- How Calico provides pod-to-pod networking.
+- Common kubeadm initialization failures and resolutions.
+
 ## ✅ Cluster Validation & Health Checks
 
 <p align="center">
@@ -217,16 +260,22 @@ sudo kubeadm reset -f
 sudo rm -rf ~/.kube
 sudo systemctl restart containerd kubelet
 
-## 🧪 Commands Used
+## 🔧 Key Commands
 
 ```bash
-kubeadm init
 kubectl get nodes
 kubectl get pods -A
-kubectl describe node
 kubectl cluster-info
+kubectl get componentstatuses
+```
 
 📘 Lab Status
 
 Status: ✅ Completed
 Next Lab: LAB 02 — Kubernetes Namespaces & Pod Operations
+
+## ➡️ Next Lab
+
+Continue with:
+
+- LAB 02 — Namespaces
