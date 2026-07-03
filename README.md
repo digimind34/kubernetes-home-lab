@@ -1,6 +1,5 @@
 # Kubernetes Home Lab 🚀
 
-md
 An end-to-end Kubernetes home lab showcasing **real-world DevOps and Cloud Engineering skills** — from cluster bootstrap to production-style application deployments, networking, security, and troubleshooting.
 
 This project reflects hands-on experience with **how Kubernetes behaves in practice**, not just theory.
@@ -17,7 +16,7 @@ This project reflects hands-on experience with **how Kubernetes behaves in pract
 - Ubuntu Linux (VM-based home lab)
 
 **Core Components**
-- Container Runtime: Docker
+- Container Runtime: containerd
 - CNI: Calico
 - Service Exposure: ClusterIP, NodePort, MetalLB (LoadBalancer)
 - Workloads: Python (Flask), Java (Spring Boot)
@@ -30,7 +29,7 @@ This project reflects hands-on experience with **how Kubernetes behaves in pract
 
 - Kubernetes (kubeadm)
 - Ubuntu Linux
-- Docker
+- containerd
 - Calico CNI
 - MetalLB
 - Python (Flask)
