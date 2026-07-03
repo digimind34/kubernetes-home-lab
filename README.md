@@ -12,6 +12,10 @@ This repository demonstrates practical Kubernetes engineering using kubeadm, con
 
 ## 🏗️ Kubernetes Home Lab Architecture
 
+<p align="center">
+  <img src="images/architecture-3d.png" alt="Kubernetes Home Lab Architecture" width="100%">
+</p>
+
 ```mermaid
 flowchart TB
 
