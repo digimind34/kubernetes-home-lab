@@ -1,5 +1,8 @@
 # LAB 02 — Namespaces
 
+> 📚 Kubernetes Home Lab Series  
+> **Lab 2 of 18**
+
 ## Overview
 Namespaces are a Kubernetes feature used to **logically isolate resources** inside the same cluster. They are commonly used to separate environments (dev/test/prod), teams, or applications, and to apply policies like RBAC, quotas, and network policies per namespace.
 
