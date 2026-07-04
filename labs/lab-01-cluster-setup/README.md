@@ -39,6 +39,15 @@ This lab establishes the **foundation for all subsequent Kubernetes labs** in th
 
 ---
 
+## 📋 Prerequisites
+
+- Ubuntu Server 24.04 LTS
+- 4 Virtual Machines
+- Static IP addresses configured
+- SSH connectivity between nodes
+- Internet access
+- Sudo privileges
+
 ## 🏗️ Cluster Architecture
 
 <p align="center">
@@ -72,14 +81,6 @@ Networking: Calico CNI
 
 Bootstrap Tool: kubeadm
 
-## 📋 Prerequisites
-
-- Ubuntu Server 24.04 LTS
-- 4 Virtual Machines
-- Static IP addresses configured
-- SSH connectivity between nodes
-- Internet access
-- Sudo privileges
 
 ## 🔁 Cluster Bootstrap Flow (kubeadm)
 
@@ -280,7 +281,7 @@ sudo rm -rf ~/.kube
 sudo systemctl restart containerd kubelet
 
 ## 🔧 Key Commands
-
+The following commands were the primary commands used to deploy, validate, and troubleshoot the Kubernetes cluster during this lab.
 ### Cluster Status
 
 ```bash
@@ -301,9 +302,11 @@ crictl ps
 Status: ✅ Completed
 ## ➡️ Next Lab
 
-Continue to **LAB 02 – Kubernetes Namespaces**, where you'll organize workloads using namespaces and learn isolation best practices.
+Continue with **LAB 02 – Kubernetes Namespaces** to learn workload isolation and namespace management.
 
 🏠 Back to: [Kubernetes Home Lab](../../README.md)
 Continue with:
 
 - LAB 02 — Namespaces
+
+![Status](https://img.shields.io/badge/Status-Completed-success)
