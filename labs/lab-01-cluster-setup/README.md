@@ -17,11 +17,22 @@
 - Cluster Validation & Health Checks
 - Kubernetes Networking Fundamentals
 
+## 📋 Lab Information
+
+| Item | Value |
+|------|-------|
+| Difficulty | Intermediate |
+| Estimated Time | 60–90 minutes |
+| Kubernetes Version | v1.33 |
+| Operating System | Ubuntu Server 24.04 LTS |
+| Container Runtime | containerd |
+| CNI | Calico |
+
 This lab demonstrates how to build a production-grade Kubernetes cluster using kubeadm, validate networking, confirm node health, and verify core system components.
 
 It forms the foundation lab for all subsequent Kubernetes workloads, networking, security, and application deployments in this repository.
 
-## 📌 Objective
+## 🎯 Learning Objectives
 Build a production-style Kubernetes home lab using `kubeadm`, validate cluster health, and verify networking using Calico CNI.
 
 This lab establishes the **foundation for all subsequent Kubernetes labs** in this repository.
@@ -213,6 +224,14 @@ After completing this lab you will have:
 - How Calico provides pod-to-pod networking.
 - Common kubeadm initialization failures and resolutions.
 
+## ⭐ Key Takeaways
+
+- Successfully initialized a multi-node Kubernetes cluster with kubeadm.
+- Configured containerd as the container runtime.
+- Deployed Calico for pod networking.
+- Verified cluster health and DNS functionality.
+- Established a solid foundation for subsequent Kubernetes labs.
+
 ## ✅ Cluster Validation & Health Checks
 
 <p align="center">
@@ -272,10 +291,11 @@ kubectl get componentstatuses
 📘 Lab Status
 
 Status: ✅ Completed
-Next Lab: LAB 02 — Kubernetes Namespaces & Pod Operations
-
 ## ➡️ Next Lab
 
+Continue to **LAB 02 – Kubernetes Namespaces**, where you'll organize workloads using namespaces and learn isolation best practices.
+
+🏠 Back to: [Kubernetes Home Lab](../../README.md)
 Continue with:
 
 - LAB 02 — Namespaces
