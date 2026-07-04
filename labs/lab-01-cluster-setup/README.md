@@ -281,11 +281,19 @@ sudo systemctl restart containerd kubelet
 
 ## 🔧 Key Commands
 
+### Cluster Status
+
 ```bash
 kubectl get nodes
 kubectl get pods -A
 kubectl cluster-info
-kubectl get componentstatuses
+```
+
+### Troubleshooting
+
+```bash
+journalctl -u kubelet
+crictl ps
 ```
 
 📘 Lab Status
