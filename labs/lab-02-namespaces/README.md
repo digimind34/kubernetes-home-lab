@@ -5,7 +5,29 @@ Namespaces are a Kubernetes feature used to **logically isolate resources** insi
 
 ---
 
-## Objectives
+## 💼 Skills Demonstrated
+
+- Kubernetes Namespace Administration
+- Resource Isolation
+- Declarative Kubernetes YAML
+- Imperative kubectl Commands
+- Namespace Context Switching
+- Workload Organization
+- Namespace Troubleshooting
+- Kubernetes Best Practices
+---
+## 📋 Lab Information
+
+| Item | Value |
+|------|-------|
+| Difficulty | Beginner–Intermediate |
+| Estimated Time | 30–45 minutes |
+| Kubernetes Version | v1.33 |
+| Resources | Namespace, Pod, Deployment |
+| Tools | kubectl |
+---
+
+##🎯 Learning Objectives
 - [ ] Understand what namespaces are and why they matter
 - [ ] Create and manage namespaces
 - [ ] Deploy resources into a specific namespace
@@ -27,7 +49,24 @@ Namespaces are a Kubernetes feature used to **logically isolate resources** insi
 - `screenshots/` — optional screenshots for proof
 
 ---
+## Namespace Architecture Diagram
+Kubernetes Cluster
 
+├── default
+│      nginx
+│
+├── kube-system
+│      CoreDNS
+│      kube-proxy
+│
+├── kube-public
+│
+└── lab-02
+       nginx
+       deployment
+       service
+
+## 🚀 Implementation
 ## Step 1 — View existing namespaces
 ```bash
 kubectl get ns
@@ -164,16 +203,23 @@ kubectl get ns
 kubectl get all -n lab-02
 kubectl get pod -o wide -n lab-02
 
+## 📸 Screenshots
+kubectl get ns
 
-Checklist:
+kubectl get pods -n lab-02
 
- Namespace lab-02 exists and is Active
+kubectl config view
 
- nginx pod running in lab-02
+kubectl config current-context
 
- nginx-deploy deployment running 2 replicas in lab-02
+## ✅ Validation
 
- Default namespace doesn’t show lab-02 resources
+ Namespace exists
+Deployment running
+Pods healthy
+Context switch works
+Default namespace unaffected
+---
 
 Troubleshooting Notes
 Issue: Error from server (Forbidden): namespaces is forbidden
@@ -209,7 +255,39 @@ kubectl delete pod nginx -n lab-02 --ignore-not-found
 kubectl delete deploy nginx-deploy -n lab-02 --ignore-not-found
 kubectl delete ns lab-02 --ignore-not-found
 
-Key Takeaways
+## 🔧 Key Commands
+
+### Namespaces
+
+```bash
+kubectl get ns
+kubectl create ns lab-02
+kubectl delete ns lab-02
+```
+
+### Context
+
+```bash
+kubectl config set-context
+kubectl config current-context
+```
+
+### Resources
+
+```bash
+kubectl get pods -n lab-02
+kubectl get deploy -n lab-02
+```
+## 🎯 Expected Outcome
+
+After completing this lab you should have:
+
+- A dedicated namespace
+- Deployment running inside the namespace
+- Context switching configured
+- Resource isolation verified
+
+## Key Takeaways
 
 Namespaces are logical partitions inside a cluster
 
@@ -234,3 +312,5 @@ Paste the content above and save.
 Create the manifest file:
 
 nano labs/lab-02-namespaces/manifests/nginx-deploy.yaml
+
+➡️ LAB 03 — Pods
