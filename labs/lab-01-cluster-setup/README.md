@@ -1,3 +1,4 @@
+<img width="1672" height="941" alt="Kubernetes Cluster Architecture" src="https://github.com/user-attachments/assets/558e8dbb-3856-4f3e-ae26-32fe4be1500f" />
 🧪 LAB 01 — Kubernetes Cluster Setup & Validation
 📌 Overview
 | Level | Intermediate |
